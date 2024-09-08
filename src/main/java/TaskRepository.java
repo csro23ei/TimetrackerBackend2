@@ -1,4 +1,4 @@
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public class TaskRepository {
-
+public interface taskRepository extends MongoRepository<Task, String> {
 }

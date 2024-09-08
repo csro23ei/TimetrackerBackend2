@@ -1,14 +1,13 @@
-
-import java.time.LocalDateTime;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import java.time.LocalDateTime;
 
 @Document(collection = "tasks")
 public class Task {
 	@Id
 	private String id;
 	private String name;
+	private boolean active;
 	private LocalDateTime startTime;
 	private LocalDateTime endTime;
 
@@ -28,6 +27,14 @@ public class Task {
 		this.name = name;
 	}
 
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
 	public LocalDateTime getStartTime() {
 		return startTime;
 	}
@@ -43,5 +50,4 @@ public class Task {
 	public void setEndTime(LocalDateTime endTime) {
 		this.endTime = endTime;
 	}
-
 }

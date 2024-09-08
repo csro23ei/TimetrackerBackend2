@@ -1,7 +1,6 @@
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class TaskService {
@@ -9,12 +8,6 @@ public class TaskService {
   private TaskRepository taskRepository;
 
   public List<Task> getAllTasks() {
-    // Hämta och returnera alla uppgifter från repository
+    return taskRepository.findAll();
   }
-
-  public Task addTask(Task task) {
-    // Lägg till uppgift och returnera den nya uppgiften från repository
-  }
-
-  // Implementera övriga affärslogik
 }
